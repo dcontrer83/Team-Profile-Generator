@@ -10,7 +10,7 @@
   In the terminal type 'node index.js'. Then answer the following questions. Once you finish, a HTML file will be created with your input located in the dist folder.
 
   ## Test
-  To run tests make sure to have jest installed. Then in the __test__ folder in the terminal type "npm test" to run all test. For indiviual test type "npm test -- <file name>". These test will make sure user input is being collected correctly to be able to use to create the HTML file.
+  To run tests make sure to have jest installed. Then in the __test__ folder in the terminal type "npm test" to run all test. For indiviual test type "npm test -- <file_name>". These test will make sure user input is being collected correctly to be able to use to create the HTML file.
 
   ## Questions
   GitHub Username: dcontrer83
