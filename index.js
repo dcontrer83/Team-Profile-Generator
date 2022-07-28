@@ -15,22 +15,22 @@ inquirer
     .prompt([
         {
             type: 'input',
-            message: "Please type team manager's name",
+            message: "Please type team manager's name:",
             name: 'managerName',
         },
         {
             type: 'input',
-            message: "Please type team manager's employee ID",
+            message: "Please type team manager's employee ID:",
             name: 'managerID',
         },
         {
             type: 'input',
-            message: "Please type team manager's email adress",
+            message: "Please type team manager's email adress:",
             name: 'managerEmail',
         },
         {
             type: 'input',
-            message: "Please type team manager's office number",
+            message: "Please type team manager's office number:",
             name: 'managerOffice',
         },
         {
@@ -71,22 +71,22 @@ const engineerInput = () => {
         .prompt([
             {
                 type: 'input',
-                message: "Please type engineer's name",
+                message: "Please type engineer's name:",
                 name: 'engineerName',
             },
             {
                 type: 'input',
-                message: "Please type engineer's ID",
+                message: "Please type engineer's ID:",
                 name: 'engineerID',
             },
             {
                 type: 'input',
-                message: "Please type engineer's email",
+                message: "Please type engineer's email:",
                 name: 'engineerEmail',
             },
             {
                 type: 'input',
-                message: "Please type engineer's GitHub username",
+                message: "Please type engineer's GitHub username:",
                 name: 'engineerGitHub',
             },
             {
@@ -127,22 +127,22 @@ const internInput = () => {
         .prompt([
             {
                 type: 'input',
-                message: "Please type intern's name",
+                message: "Please type intern's name:",
                 name: 'internName',
             }, 
             {
                 type: 'input',
-                message: "Please type intern's ID",
+                message: "Please type intern's ID:",
                 name: 'interID',
             },
             {
                 type: 'input',
-                message: "Please type intern's email",
+                message: "Please type intern's email:",
                 name: 'internEmail'
             },
             {
                 type: 'input',
-                message: "Please type intern's school",
+                message: "Please type intern's school:",
                 name: 'internSchool',
             },
             {
