@@ -37,7 +37,7 @@ inquirer
             type: 'list',
             message: "Do you want to add an engineer or an intern or finish buidling your team?",
             name: 'options',
-            choices: ['Engineer', 'Intern', 'None'],
+            choices: ['Engineer', 'Intern', 'Finished'],
         }
     ])
 
@@ -60,6 +60,11 @@ inquirer
             internInput();
         }
         else {
+             fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                if(err) {
+                    console.log(err);
+                }
+            })
         }
     });
 }
@@ -91,7 +96,7 @@ const engineerInput = () => {
                 type: 'list',
                 message: "Do you want to add an engineer or an intern or finish buidling your team?",
                 name: 'options',
-                choices: ['Engineer', 'Intern', 'None'],
+                choices: ['Engineer', 'Intern', 'Finished'],
             }
         ])
 
@@ -111,7 +116,11 @@ const engineerInput = () => {
                 internInput();
             }
             else {
-                return
+                 fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                    if(err) {
+                        console.log(err);
+                    }
+                })      
             }
         });
 }
@@ -132,7 +141,7 @@ const internInput = () => {
             {
                 type: 'input',
                 message: "Please type intern's email",
-                name: 'internEmail,'
+                name: 'internEmail'
             },
             {
                 type: 'input',
@@ -143,12 +152,18 @@ const internInput = () => {
                 type: 'list',
                 message: "Do you want to add an engineer or an intern or finish buidling your team?",
                 name: 'options',
-                choices: ['Engineer', 'Intern', 'None'],
+                choices: ['Engineer', 'Intern', 'Finished'],
             }
         ])
 
         .then(data => {
             const intern = new Intern(data.internName, data.interID, data.internEmail, data.internSchool)
+
+            fs.appendFile(filePath, myFunctions.generateHtmlIntern(intern), (err) => {
+                if(err) {
+                    console.log(err);
+                }
+            })
     
             if(data.options === 'Engineer') {
                 engineerInput();
@@ -157,7 +172,11 @@ const internInput = () => {
                 internInput();
             }
             else {
-                return
+                 fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                    if(err) {
+                        console.log(err);
+                    }
+                })
             }
         });
 }

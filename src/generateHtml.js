@@ -43,13 +43,43 @@ function generateHtmlEngineer(engineer) {
             <li class="list-group-item">Email: ${engineer.email}</li>
             <li class="list-group-item">GitHub: ${engineer.github}</li>
           </ul>
-        </div>`
+        </div>
+        `
+}
 
+function generateHtmlIntern(intern) {
+  return `
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Name: ${intern.name}
+            <br>
+            Title: ${intern.getRole()}
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${intern.id}</li>
+            <li class="list-group-item">Email: ${intern.email}</li>
+            <li class="list-group-item">School: ${intern.school}</li>
+          </ul>
+        </div>
+        `
+}
+
+function generateHtmlEnd() {
+  return `
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    </body>
+    </html>
+  `
 }
 
 module.exports = {
   generateHtmlManager,
-  generateHtmlEngineer
+  generateHtmlEngineer,
+  generateHtmlIntern,
+  generateHtmlEnd
 }
 
   
