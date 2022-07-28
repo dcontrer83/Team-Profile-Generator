@@ -44,9 +44,6 @@ inquirer
     .then(data => {
         const manager = new Manager(data.managerName, data.managerID, data.managerEmail, data.managerOffice)
 
-        console.log(manager)
-        console.log(manager.name)
-
         fs.writeFile(filePath, myFunctions.generateHtmlManager(manager), (err) => {
             if (err) {
                 console.log(err);
@@ -103,7 +100,7 @@ const engineerInput = () => {
         .then(data => {
             const engineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGitHub)
 
-            fs.appendFile(filePath, myFunctions.generateHtmlEngineer(engineer), (err) => {
+            fs.appendFileSync(filePath, myFunctions.generateHtmlEngineer(engineer), (err) => {
                 if (err) {
                     console.log(err);
                 }
@@ -116,7 +113,7 @@ const engineerInput = () => {
                 internInput();
             }
             else {
-                 fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                 fs.appendFileSync(filePath, myFunctions.generateHtmlEnd(), (err) => {
                     if(err) {
                         console.log(err);
                     }
@@ -159,7 +156,7 @@ const internInput = () => {
         .then(data => {
             const intern = new Intern(data.internName, data.interID, data.internEmail, data.internSchool)
 
-            fs.appendFile(filePath, myFunctions.generateHtmlIntern(intern), (err) => {
+            fs.appendFileSync(filePath, myFunctions.generateHtmlIntern(intern), (err) => {
                 if(err) {
                     console.log(err);
                 }
@@ -172,7 +169,7 @@ const internInput = () => {
                 internInput();
             }
             else {
-                 fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                 fs.appendFileSync(filePath, myFunctions.generateHtmlEnd(), (err) => {
                     if(err) {
                         console.log(err);
                     }
