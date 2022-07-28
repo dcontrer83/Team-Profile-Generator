@@ -11,25 +11,45 @@ function generateHtmlManager(manager) {
         <link rel="stylesheet" href="./style.css"/>
         <title>Document</title>
     </head>
+
     <body>
-    
-        <div id="allCards">
-            <div class="card" style="width: 18rem;">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">
-                      Name: ${manager.name}
-                      <br>
-                      Title: ${manager.getRole()}
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">ID: ${manager.id}</li>
-                      <li class="list-group-item">Email: ${manager.email}</li>
-                      <li class="list-group-item">Office number: ${manager.officeNumber}</li>
-                    </ul>
-                  </div>
-    
-              </div> 
+      <div id="allCards">
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Name: ${manager.name}
+            <br>
+            Title: ${manager.getRole()}
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${manager.id}</li>
+            <li class="list-group-item">Email: ${manager.email}</li>
+            <li class="list-group-item">Office number: ${manager.officeNumber}</li>
+          </ul>
+        </div>
     `
 }
 
-module.exports = generateHtmlManager;
+function generateHtmlEngineer(engineer) {
+  return `          
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Name: ${engineer.name}
+            <br>
+            Title: ${engineer.getRole()}
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${engineer.id}</li>
+            <li class="list-group-item">Email: ${engineer.email}</li>
+            <li class="list-group-item">GitHub: ${engineer.github}</li>
+          </ul>
+        </div>`
+
+}
+
+module.exports = {
+  generateHtmlManager,
+  generateHtmlEngineer
+}
+
+  

@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path')
-const generateHtmlManager = require('./src/html')
+const myFunctions = require('./src/generateHtml')
 
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
@@ -47,7 +47,7 @@ inquirer
         console.log(manager)
         console.log(manager.name)
 
-        fs.writeFile(filePath, generateHtmlManager(manager), (err) => {
+        fs.writeFile(filePath, myFunctions.generateHtmlManager(manager), (err) => {
             if (err) {
                 console.log(err);
             }
@@ -97,6 +97,12 @@ const engineerInput = () => {
 
         .then(data => {
             const engineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGitHub)
+
+            fs.appendFile(filePath, myFunctions.generateHtmlEngineer(engineer), (err) => {
+                if (err) {
+                    console.log(err);
+                }
+            })
     
             if(data.options === 'Engineer') {
                 engineerInput();
