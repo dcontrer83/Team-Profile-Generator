@@ -1,0 +1,46 @@
+body {
+    background-color: whitesmoke;
+}
+
+/* jumbotron is centered and added color */
+.jumbotronCSS {
+    text-align: center;
+    background-color: goldenrod;
+    color: whitesmoke;
+}
+
+/* text in jumbotron is bold */
+.display-4{
+    font-weight: bold;
+}
+
+/* container of all cards to space them evenly  */
+#allCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* individual cards changes */
+.card{
+    text-align: center;
+    width: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 5%;
+}
+
+/* header for cards */
+.card-header {
+    font-size: 1.5em;
+    background: dodgerblue;
+    color: gold;
+    font-weight: bold;
+}
+
+/* changes for cards content, not including header */
+.list-group {
+    font-size: 1.25em;
+}
