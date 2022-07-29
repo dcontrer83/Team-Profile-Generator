@@ -100,9 +100,16 @@ const engineerInput = () => {
         .then(data => {
             const engineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGitHub)
 
-            fs.appendFileSync(filePath, myFunctions.generateHtmlEngineer(engineer), (err) => {
+            fs.appendFile(filePath, myFunctions.generateHtmlEngineer(engineer), (err) => {
                 if (err) {
                     console.log(err);
+                }
+                else if(data.options === 'Finished') {
+                    fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                        if(err) {
+                            console.log(err);
+                        }
+                    }) 
                 }
             })
     
@@ -111,13 +118,6 @@ const engineerInput = () => {
             }
             else if(data.options === 'Intern') {
                 internInput();
-            }
-            else {
-                 fs.appendFileSync(filePath, myFunctions.generateHtmlEnd(), (err) => {
-                    if(err) {
-                        console.log(err);
-                    }
-                })      
             }
         });
 }
@@ -156,9 +156,16 @@ const internInput = () => {
         .then(data => {
             const intern = new Intern(data.internName, data.interID, data.internEmail, data.internSchool)
 
-            fs.appendFileSync(filePath, myFunctions.generateHtmlIntern(intern), (err) => {
+            fs.appendFile(filePath, myFunctions.generateHtmlIntern(intern), (err) => {
                 if(err) {
                     console.log(err);
+                }
+                else if(data.options === 'Finished') {
+                    fs.appendFile(filePath, myFunctions.generateHtmlEnd(), (err) => {
+                        if(err) {
+                            console.log(err);
+                        }
+                    }) 
                 }
             })
     
@@ -168,13 +175,7 @@ const internInput = () => {
             else if(data.options === 'Intern') {
                 internInput();
             }
-            else {
-                 fs.appendFileSync(filePath, myFunctions.generateHtmlEnd(), (err) => {
-                    if(err) {
-                        console.log(err);
-                    }
-                })
-            }
+
         });
 }
 
